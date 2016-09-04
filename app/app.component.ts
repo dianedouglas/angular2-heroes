@@ -20,15 +20,9 @@ export class AppComponent {
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
   slicesOfPie: number = 3;
-  favoriteAlbum: Album = {
-    title: "Disintegration",
-    artist: "The Cure",
-    released: 1989
-  }
+  favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
 }
 
 export class Album {
-  title: string;
-  artist: string;
-  released: number;
+  constructor (public title: string, public artist: string, public released: number) {  }
 }
