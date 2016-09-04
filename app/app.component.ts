@@ -24,8 +24,18 @@ import { Component } from '@angular/core';
   <div *ngFor="let currentPie of favoritePies" class="section">
     <div class="pie">
       <p>{{currentPie}}</p>
-    <div>
-  <div>
+    </div>
+  </div>
+
+  <h3>Some more of my favorite albums are:</h3>
+
+  <div *ngFor="let album of albums" class="section">
+    <div class="album">
+      <p>{{album.title}}</p>
+      <p>By {{album.artist}}</p>
+      <p>Released in {{album.released}}</p>
+    </div>
+  </div>
   `
 })
 
@@ -35,6 +45,14 @@ export class AppComponent {
   slicesOfPie: number = 3;
   favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry", "Chocolate Cream", "Raspberry"];
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
+  albums: Album[] = [
+    new Album("Pulse", "Pink Floyd", 1995),
+    new Album("Funhouse", "The Stooges", 1970),
+    new Album("Twilight of the Thunder God", "Amon Amarth", 2008),
+    new Album("Dilate", "Ani DiFranco", 1996),
+    new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
+    new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
+  ]
 }
 
 export class Album {
