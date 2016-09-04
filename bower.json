@@ -1,0 +1,17 @@
+{
+  "name": "angular2-quickstart",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Gibberish314 <a.moosen@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dianedouglas/angular2-heroes",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
