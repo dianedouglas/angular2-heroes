@@ -39,6 +39,9 @@ import { Component } from '@angular/core';
   `
 })
 
+// when using *ngFor="let thing of things", the first "thing" is a template input variable you are creating. 
+// it can be used all over the template. "things" needs to be a property of the component class. 
+
 export class AppComponent { 
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
