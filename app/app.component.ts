@@ -13,6 +13,11 @@ import { Component } from '@angular/core';
   <p>{{favoriteAlbum.title}}</p>
   <p>By {{favoriteAlbum.artist}}</p>
   <p>Released in {{favoriteAlbum.released}}</p>
+  
+  <h3>Edit Favorite Album:</h3>
+  <input [(ngModel)]="favoriteAlbum.title" placeholder="title">
+  <input [(ngModel)]="favoriteAlbum.artist" placeholder="artist">
+  <input [(ngModel)]="favoriteAlbum.released" placeholder="released">
   `
 })
 
