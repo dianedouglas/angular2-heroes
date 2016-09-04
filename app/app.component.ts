@@ -18,6 +18,14 @@ import { Component } from '@angular/core';
   <input [(ngModel)]="favoriteAlbum.title" placeholder="title">
   <input [(ngModel)]="favoriteAlbum.artist" placeholder="artist">
   <input [(ngModel)]="favoriteAlbum.released" placeholder="released">
+
+  <h3>My favorite types of pie are:</h3>
+
+  <div class="foods">
+    <div class="pie">
+      <p>How do I display some HTML for each item in a list? Right now I only have 3 favorite pies but I will certainly add more pies to this list later.</p>
+    <div>
+  <div>
   `
 })
 
@@ -25,6 +33,7 @@ export class AppComponent {
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
   slicesOfPie: number = 3;
+  favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry"];
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
 }
 
