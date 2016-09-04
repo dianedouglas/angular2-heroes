@@ -33,7 +33,7 @@ export class AppComponent {
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
   slicesOfPie: number = 3;
-  favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry"];
+  favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry", "Chocolate Cream", "Raspberry"];
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
 }
 
