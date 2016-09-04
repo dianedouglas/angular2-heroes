@@ -21,9 +21,9 @@ import { Component } from '@angular/core';
 
   <h3>My favorite types of pie are:</h3>
 
-  <div class="foods">
+  <div *ngFor="let currentPie of favoritePies" class="section">
     <div class="pie">
-      <p>How do I display some HTML for each item in a list? Right now I only have 3 favorite pies but I will certainly add more pies to this list later.</p>
+      <p>{{currentPie}}</p>
     <div>
   <div>
   `
