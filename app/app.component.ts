@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Album } from './album.model';
+import { AllAlbumsService } from './all-albums.service';
 
 @Component({
   selector: 'my-app',
+  providers: [AllAlbumsService],
   template: `
   <my-favorite-things [favoriteThingsPieSlices]="slicesOfPie"></my-favorite-things>
   <favorite-album [currentAlbum]="favoriteAlbum"></favorite-album>
@@ -19,16 +21,18 @@ import { Album } from './album.model';
 // it can be used all over the template. "things" needs to be a property of the component class. 
 
 export class AppComponent {
+  constructor(private albumService: AllAlbumsService){
+    
+  }
+  albums: Album[];
+  getTheAlbumsFromTheService(): void {
+    this.albums = this.albumService.getAlbums();
+  }
+  ngOnInit() {
+    this.getTheAlbumsFromTheService();
+  }
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
   slicesOfPie: number = 3;
-  albums: Album[] = [
-    new Album("Pulse", "Pink Floyd", 1995),
-    new Album("Funhouse", "The Stooges", 1970),
-    new Album("Twilight of the Thunder God", "Amon Amarth", 2008),
-    new Album("Dilate", "Ani DiFranco", 1996),
-    new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
-    new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
-  ];
   updateFavoriteAlbum = function(incomingAlbumFromChild: Album) {
     this.favoriteAlbum = incomingAlbumFromChild;
   }
