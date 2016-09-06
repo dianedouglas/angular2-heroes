@@ -4,9 +4,9 @@ import { Album } from './album.model';
 @Component({
   selector: 'my-app',
   template: `
-  <my-favorite-things></my-favorite-things>
+  <my-favorite-things [favoriteThingsPieSlices]="slicesOfPie"></my-favorite-things>
   <favorite-album [currentAlbum]="favoriteAlbum"></favorite-album>
-  <album-list [albumList]="albums"></album-list>
+  <album-list [albumList]="albums" [albumListPieSlices]="slicesOfPie"></album-list>
   <my-pies></my-pies>
   `
 })
@@ -15,7 +15,8 @@ import { Album } from './album.model';
 // it can be used all over the template. "things" needs to be a property of the component class. 
 
 export class AppComponent {
-  favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);  
+  favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
+  slicesOfPie: number = 3;
   albums: Album[] = [
     new Album("Pulse", "Pink Floyd", 1995),
     new Album("Funhouse", "The Stooges", 1970),

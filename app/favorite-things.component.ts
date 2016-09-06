@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'my-favorite-things',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     <ul>
       <li>One of my favorite bands is: {{favoriteBand}}</li>
       <li>If I had to choose a favorite painter it would be: {{favoritePainter}}</li>
-      <li>The number of slices of pie I would like is: {{slicesOfPie}}</li>
+      <li>The number of slices of pie I would like is: {{favoriteThingsPieSlices}}</li>
     </ul>
   `
 })
@@ -15,5 +15,6 @@ import { Component } from '@angular/core';
 export class FavoriteThingsComponent {
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
-  slicesOfPie: number = 3;
+  @Input()
+  favoriteThingsPieSlices: number;
 }

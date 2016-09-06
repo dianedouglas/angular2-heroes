@@ -7,7 +7,7 @@ import { Album } from './album.model';
     <h3>Some more of my favorite albums are:</h3>
 
     <div *ngFor="let album of albumList" class="section">
-      <div (click)="doStuff(album, slicesOfPie)" class="album">
+      <div (click)="doStuff(album, albumListPieSlices)" class="album">
         <p>{{album.title}}</p>
         <p>By {{album.artist}}</p>
         <p>Released in {{album.released}}</p>
@@ -22,6 +22,6 @@ export class AlbumListComponent {
     alert('And incedentally, I would still like ' + someThingElse + ' slices of pie, please.');
     this.favoriteAlbum = someThing;
   }
-  @Input()
-  albumList: Album[];
+  @Input() albumList: Album[];
+  @Input() albumListPieSlices: number;
 }
