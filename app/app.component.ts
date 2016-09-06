@@ -59,6 +59,7 @@ export class AppComponent {
   doStuff = function(someThing: Album, someThingElse) {
     alert('Hi there! You just clicked ' + someThing.title);
     alert('And incedentally, I would still like ' + someThingElse + ' slices of pie, please.');
+    this.favoriteAlbum = someThing;
   }
 }
 
