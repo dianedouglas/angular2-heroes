@@ -5,16 +5,7 @@ import { Album } from './album.model';
   selector: 'my-app',
   template: `
   <my-favorite-things></my-favorite-things>
-  <h3>One of my favorite albums is: </h3>
-  <p>{{favoriteAlbum.title}}</p>
-  <p>By {{favoriteAlbum.artist}}</p>
-  <p>Released in {{favoriteAlbum.released}}</p>
-  <button (click)="toggleEdit()">Edit</button>
-  
-  <h3 *ngIf="show === true">Edit Favorite Album:</h3>
-  <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.title" placeholder="title">
-  <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.artist" placeholder="artist">
-  <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.released" placeholder="released">
+  <favorite-album [currentAlbum]="favoriteAlbum"></favorite-album>
 
   <h3>Some more of my favorite albums are:</h3>
 
@@ -34,8 +25,7 @@ import { Album } from './album.model';
 // it can be used all over the template. "things" needs to be a property of the component class. 
 
 export class AppComponent {
-  favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
-  show: boolean = false;  
+  favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);  
   albums: Album[] = [
     new Album("Pulse", "Pink Floyd", 1995),
     new Album("Funhouse", "The Stooges", 1970),
@@ -48,12 +38,5 @@ export class AppComponent {
     alert('Hi there! You just clicked ' + someThing.title);
     alert('And incedentally, I would still like ' + someThingElse + ' slices of pie, please.');
     this.favoriteAlbum = someThing;
-  }
-  toggleEdit = function() {
-    if(this.show === true) {
-      this.show = false;
-    } else  {
-      this.show = true;
-    }
   }
 }
