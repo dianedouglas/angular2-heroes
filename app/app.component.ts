@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Album } from './album.model';
 
 @Component({
   selector: 'my-app',
@@ -70,8 +71,4 @@ export class AppComponent {
       this.show = true;
     }
   }
-}
-
-export class Album {
-  constructor (public title: string, public artist: string, public released: number) {  }
 }
