@@ -6,7 +6,11 @@ import { Album } from './album.model';
   template: `
   <my-favorite-things [favoriteThingsPieSlices]="slicesOfPie"></my-favorite-things>
   <favorite-album [currentAlbum]="favoriteAlbum"></favorite-album>
-  <album-list [albumList]="albums" [albumListPieSlices]="slicesOfPie"></album-list>
+  <album-list 
+    [albumList]="albums" 
+    [albumListPieSlices]="slicesOfPie"
+    (favoriteAlbumUpdated)="updateFavoriteAlbum($event)"
+  ></album-list>
   <my-pies></my-pies>
   `
 })
@@ -25,4 +29,7 @@ export class AppComponent {
     new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
     new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
   ];
+  updateFavoriteAlbum = function(incomingAlbumFromChild: Album) {
+    this.favoriteAlbum = incomingAlbumFromChild;
+  }
 }

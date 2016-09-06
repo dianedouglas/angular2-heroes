@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Album } from './album.model';
 
 @Component({
@@ -17,11 +17,12 @@ import { Album } from './album.model';
 })
 
 export class AlbumListComponent {
-  doStuff = function(someThing: Album, someThingElse) {
-    alert('Hi there! You just clicked ' + someThing.title);
+  doStuff = function(clickedAlbum: Album, someThingElse) {
+    alert('Hi there! You just clicked ' + clickedAlbum.title);
     alert('And incedentally, I would still like ' + someThingElse + ' slices of pie, please.');
-    this.favoriteAlbum = someThing;
+    this.favoriteAlbumUpdated.emit(clickedAlbum);
   }
   @Input() albumList: Album[];
   @Input() albumListPieSlices: number;
+  @Output() favoriteAlbumUpdated = new EventEmitter();
 }
