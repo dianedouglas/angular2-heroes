@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { PiesComponent } from './pies.component';
+import { FavoriteThingsComponent } from './favorite-things.component';
 import { AppComponent }   from './app.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { AppComponent }   from './app.component';
   declarations: [ 
     AppComponent,
     PiesComponent,
+    FavoriteThingsComponent,
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
