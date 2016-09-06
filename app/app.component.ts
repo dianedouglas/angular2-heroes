@@ -21,14 +21,6 @@ import { Album } from './album.model';
   <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.artist" placeholder="artist">
   <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.released" placeholder="released">
 
-  <h3>My favorite types of pie are:</h3>
-
-  <div *ngFor="let currentPie of favoritePies" class="section">
-    <div class="pie">
-      <p>{{currentPie}}</p>
-    </div>
-  </div>
-
   <h3>Some more of my favorite albums are:</h3>
 
   <div *ngFor="let album of albums" class="section">
@@ -38,17 +30,18 @@ import { Album } from './album.model';
       <p>Released in {{album.released}}</p>
     </div>
   </div>
+
+  <my-pies></my-pies>
   `
 })
 
-// when using *ngFor="let thing of things", the first "thing" is a template input variable you are creating. 
+// when using *ngFor="let thing of things", the first "thing" is a template input variable you are creating.
 // it can be used all over the template. "things" needs to be a property of the component class. 
 
 export class AppComponent { 
   favoriteBand: string = 'Jimi Hendrix';
   favoritePainter: string = 'Van Gogh';
   slicesOfPie: number = 3;
-  favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry", "Chocolate Cream", "Raspberry"];
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
   show: boolean = false;  
   albums: Album[] = [
