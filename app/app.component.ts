@@ -30,7 +30,7 @@ import { Component } from '@angular/core';
   <h3>Some more of my favorite albums are:</h3>
 
   <div *ngFor="let album of albums" class="section">
-    <div class="album">
+    <div (click)="doStuff()" class="album">
       <p>{{album.title}}</p>
       <p>By {{album.artist}}</p>
       <p>Released in {{album.released}}</p>
@@ -55,7 +55,10 @@ export class AppComponent {
     new Album("Dilate", "Ani DiFranco", 1996),
     new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
     new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
-  ]
+  ];
+  doStuff = function() {
+    alert('Hi there! You just clicked on an album!');
+  }
 }
 
 export class Album {
