@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
   <p>{{favoriteAlbum.title}}</p>
   <p>By {{favoriteAlbum.artist}}</p>
   <p>Released in {{favoriteAlbum.released}}</p>
+  <button (click)="toggleEdit()">Edit</button>
   
   <h3 *ngIf="show === true">Edit Favorite Album:</h3>
   <input *ngIf="show === true" [(ngModel)]="favoriteAlbum.title" placeholder="title">
@@ -48,7 +49,7 @@ export class AppComponent {
   slicesOfPie: number = 3;
   favoritePies: string[] = ["Apple", "Banana Cream", "Blackberry", "Chocolate Cream", "Raspberry"];
   favoriteAlbum: Album = new Album("Disintegration", "The Cure", 1989);
-  show: boolean = false;
+  show: boolean = false;  
   albums: Album[] = [
     new Album("Pulse", "Pink Floyd", 1995),
     new Album("Funhouse", "The Stooges", 1970),
@@ -61,6 +62,13 @@ export class AppComponent {
     alert('Hi there! You just clicked ' + someThing.title);
     alert('And incedentally, I would still like ' + someThingElse + ' slices of pie, please.');
     this.favoriteAlbum = someThing;
+  }
+  toggleEdit = function() {
+    if(this.show === true) {
+      this.show = false;
+    } else  {
+      this.show = true;
+    }
   }
 }
 
