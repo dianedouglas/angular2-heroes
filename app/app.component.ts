@@ -22,11 +22,11 @@ import { AllAlbumsService } from './all-albums.service';
 
 export class AppComponent {
   constructor(private albumService: AllAlbumsService){
-    
+
   }
   albums: Album[];
   getTheAlbumsFromTheService(): void {
-    this.albums = this.albumService.getAlbums();
+    this.albumService.getAlbums().then(albumsReturnedFromPromise => this.albums = albumsReturnedFromPromise);
   }
   ngOnInit() {
     this.getTheAlbumsFromTheService();
